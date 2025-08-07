@@ -10,8 +10,8 @@ spec:
     roleArnRef:
       name: eks-cluster-role
     resourcesVpcConfig:
-      endpointConfigPublicAccess: true
-      endpointConfigPrivateAccess: false
+      endpointPrivateAccess: true
+      endpointPublicAccess: false
       securityGroupIdRefs:
         - name: default
       subnetIdRefs:
