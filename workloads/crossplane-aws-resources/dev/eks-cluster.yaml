@@ -1,0 +1,26 @@
+---
+apiVersion: eks.aws.crossplane.io/v1beta1
+kind: Cluster
+metadata:
+  name: crossplane-eks
+spec:
+  forProvider:
+    region: us-east-2
+    version: "1.28"
+    roleArnRef:
+      name: eks-cluster-role
+    vpcConfig:
+      - subnetIds:
+          - subnet-0c76bff511c4be88b
+          - subnet-098f907e237006ac8
+        endpointConfigPublicAccess: true
+        endpointConfigPrivateAccess: false
+    tags:
+      - key: Name
+        value: crossplane-eks
+      - key: Environment
+        value: dev
+      - key: ManagedBy
+        value: crossplane
+  providerConfigRef:
+    name: default

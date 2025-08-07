@@ -6,3 +6,7 @@ resources:
   - namespace.yaml
   - s3.yaml
   - ec2.yaml
+  - iam-role-cluster.yaml
+  - iam-role-node.yaml
+  - eks-cluster.yaml
+  - eks-nodegroup.yaml
