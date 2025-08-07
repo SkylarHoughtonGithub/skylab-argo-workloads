@@ -7,7 +7,7 @@ spec:
   forProvider:
     region: us-east-2
     clusterNameRef:
-      name: crossplane-nodegroup-general
+      name: crossplane-eks
     nodeRoleRef:
       name: eks-node-role
     subnetIdRefs:
