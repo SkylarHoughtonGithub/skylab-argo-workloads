@@ -1,0 +1,19 @@
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: SecurityGroup
+metadata:
+  name: skylab-default
+spec:
+  forProvider:
+    region: us-east-2
+    vpcId: vpc-0b03763a7a78b563b
+    description: "EKS cluster security group"
+    tags:
+      - key: Name
+        value: skylab-default
+      - key: project
+        value: skylab
+      - key: environment
+        value: lab
+  providerConfigRef:
+    name: default
