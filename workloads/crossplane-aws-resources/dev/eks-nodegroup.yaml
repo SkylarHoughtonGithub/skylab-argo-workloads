@@ -10,18 +10,17 @@ spec:
       name: crossplane-nodegroup-general
     nodeRoleRef:
       name: eks-node-role
-    subnetIds:
-        - subnet-0c76bff511c4be88b
-        - subnet-098f907e237006ac8
+    subnetIdRefs:
+      - name: skylab-public-us-east-2a
+      - name: skylab-public-us-east-2c
     scalingConfig:
       - desiredSize: 1
         maxSize: 1
         minSize: 1
     instanceTypes:
       - t3.medium
-    amiType: AL2_x86_64
-    capacityType: ON_DEMAND
-    diskSize: 20
+    updateConfig:
+      force: true
     tags:
       Name: crossplane-eks
       Environment: dev

@@ -9,15 +9,20 @@ spec:
     version: "1.28"
     roleArnRef:
       name: eks-cluster-role
-    vpcConfig:
-      - subnetIds:
-          - subnet-0c76bff511c4be88b
-          - subnet-098f907e237006ac8
-        endpointConfigPublicAccess: true
-        endpointConfigPrivateAccess: false
+    resourcesVpcConfig:
+      endpointConfigPublicAccess: true
+      endpointConfigPrivateAccess: false
+      securityGroupIdRefs:
+        - name: default
+      subnetIdRefs:
+        - name: skylab-public-us-east-2a
+        - name: skylab-public-us-east-2c
     tags:
       Name: crossplane-eks
       Environment: dev
       ManagedBy: crossplane
   providerConfigRef:
     name: default
+  writeConnectionSecretToRef:
+    name: crossplane-eks-conn
+    namespace: crossplane-aws-resources
