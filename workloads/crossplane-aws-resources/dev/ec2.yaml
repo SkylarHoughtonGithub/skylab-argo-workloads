@@ -12,13 +12,7 @@ spec:
     subnetId: subnet-0c76bff511c4be88b
     securityGroupIds:
       - sg-0c378988c930cd677
-    userData: |
-      #!/bin/bash
-      yum update -y
-      yum install -y httpd
-      systemctl start httpd
-      systemctl enable httpd
-      echo "<h1>Hello from Crossplane EC2!</h1>" > /var/www/html/index.html
+    userData: IyEvYmluL2Jhc2gKeXVtIHVwZGF0ZSAteQp5dW0gaW5zdGFsbCAteSBodHRwZApzeXN0ZW1jdGwgc3RhcnQgaHR0cGQKc3lzdGVtY3RsIGVuYWJsZSBodHRwZAplY2hvICI8aDE+SGVsbG8gZnJvbSBDcm9zc3BsYW5lIEVDMiE8L2gxPiIgPiAvdmFyL3d3dy9odG1sL2luZGV4Lmh0bWw=
     tags:
       - key: Name
         value: crossplane-test-instance
