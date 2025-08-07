@@ -5,3 +5,4 @@ namespace: crossplane-aws-resources
 resources:
   - namespace.yaml
   - s3.yaml
+  - ec2.yaml
