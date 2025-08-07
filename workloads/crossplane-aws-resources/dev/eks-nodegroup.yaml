@@ -23,11 +23,8 @@ spec:
     capacityType: ON_DEMAND
     diskSize: 20
     tags:
-      - key: Name
-        value: crossplane-nodegroup-general
-      - key: Environment
-        value: dev
-      - key: ManagedBy
-        value: crossplane
+      Name: crossplane-eks
+      Environment: dev
+      ManagedBy: crossplane
   providerConfigRef:
     name: default

@@ -16,11 +16,8 @@ spec:
         endpointConfigPublicAccess: true
         endpointConfigPrivateAccess: false
     tags:
-      - key: Name
-        value: crossplane-eks
-      - key: Environment
-        value: dev
-      - key: ManagedBy
-        value: crossplane
+      Name: crossplane-eks
+      Environment: dev
+      ManagedBy: crossplane
   providerConfigRef:
     name: default
