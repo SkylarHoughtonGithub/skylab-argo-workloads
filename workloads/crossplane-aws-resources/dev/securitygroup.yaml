@@ -5,9 +5,22 @@ metadata:
   name: skylab-default
 spec:
   forProvider:
+    groupName: skylab-default
     region: us-east-2
     vpcId: vpc-0b03763a7a78b563b
     description: "EKS cluster security group"
+    ingress:
+      - fromPort: -1
+        ipProtocol: "-1"
+        ipRanges:
+          - cidrIp: 68.52.182.6/32
+        toPort: -1
+    egress:
+      - fromPort: -1
+        ipProtocol: "-1"
+        ipRanges:
+          - cidrIp: 68.52.182.6/32
+        toPort: -1
     tags:
       - key: Name
         value: skylab-default
