@@ -10,3 +10,4 @@ resources:
   - iam-role-node.yaml
   - eks-cluster.yaml
   - eks-nodegroup.yaml
+  - securitygroup.yaml
