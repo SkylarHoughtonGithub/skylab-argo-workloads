@@ -17,6 +17,7 @@ spec:
       subnetIdRefs:
         - name: subnet-0c76bff511c4be88b
         - name: subnet-098f907e237006ac8
+      vpcId: vpc-0b03763a7a78b563b
     tags:
       Name: crossplane-eks
       Environment: dev
