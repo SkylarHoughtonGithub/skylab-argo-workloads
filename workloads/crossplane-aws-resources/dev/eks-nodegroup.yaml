@@ -11,8 +11,8 @@ spec:
     nodeRoleRef:
       name: eks-node-role
     subnetRefs:
-      - name: subnet-0c76bff511c4be88b
-      - name: subnet-098f907e237006ac8
+      - name: skylab-public-us-east-2a
+      - name: skylab-public-us-east-2c
     scalingConfig:
       desiredSize: 1
       maxSize: 1
