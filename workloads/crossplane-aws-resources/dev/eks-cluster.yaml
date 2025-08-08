@@ -10,8 +10,8 @@ spec:
     roleArnRef:
       name: eks-cluster-role
     resourcesVpcConfig:
-      endpointPrivateAccess: true
-      endpointPublicAccess: false
+      endpointPrivateAccess: false
+      endpointPublicAccess: true
       securityGroupIdRefs:
         - name: skylab-crossplane-sg
       subnetIdRefs:
