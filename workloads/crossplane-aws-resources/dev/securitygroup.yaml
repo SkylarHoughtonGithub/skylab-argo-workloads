@@ -2,10 +2,10 @@
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: SecurityGroup
 metadata:
-  name: skylab-default
+  name: skylab-crossplane-sg
 spec:
   forProvider:
-    groupName: skylab-default
+    groupName: skylab-crossplane-sg
     region: us-east-2
     vpcIdRef:
       name: skylab-crossplane-vpc
@@ -24,7 +24,7 @@ spec:
         toPort: -1
     tags:
       - key: Name
-        value: skylab-default
+        value: skylab-crossplane-sg
       - key: project
         value: skylab
       - key: environment
