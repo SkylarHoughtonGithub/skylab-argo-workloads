@@ -27,16 +27,17 @@ backstage:
         connection: ':memory:'
 
     auth:
-      environment: development
+      environment: production
       providers:
-        guest:
-          dangerouslyAllowOutsideDevelopment: true
+        github:
+          production:
+            clientId: ${GITHUB_CLIENT_ID}
+            clientSecret: ${GITHUB_CLIENT_SECRET}
 
     integrations:
       github:
         - host: github.com
-          # Add your GitHub token as a secret reference
-          # token: ${GITHUB_TOKEN}
+          token: ${GITHUB_TOKEN}
 
     techdocs:
       builder: 'local'
@@ -58,6 +59,21 @@ backstage:
   extraEnvVars:
     - name: NODE_ENV
       value: development
+    - name: GITHUB_CLIENT_ID
+      valueFrom:
+        secretKeyRef:
+          name: backstage-github-oauth
+          key: client-id
+    - name: GITHUB_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: backstage-github-oauth
+          key: client-secret
+    - name: GITHUB_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: backstage-github-oauth
+          key: token
 
   extraVolumeMounts: []
   extraVolumes: []
