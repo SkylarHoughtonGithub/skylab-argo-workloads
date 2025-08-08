@@ -6,6 +6,7 @@ metadata:
   annotations:
     crossplane.io/external-name: subnet-0c76bff511c4be88b
 spec:
+  deletionPolicy: Orphan
   forProvider:
     region: us-east-2
     availabilityZone: us-east-2a
@@ -26,6 +27,7 @@ metadata:
   annotations:
     crossplane.io/external-name: subnet-098f907e237006ac8
 spec:
+  deletionPolicy: Orphan
   forProvider:
     region: us-east-2
     availabilityZone: us-east-2c

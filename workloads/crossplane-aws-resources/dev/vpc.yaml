@@ -6,6 +6,7 @@ metadata:
   annotations:
     crossplane.io/external-name: vpc-0b03763a7a78b563b
 spec:
+  deletionPolicy: Orphan
   forProvider:
     region: us-east-2
     cidrBlock: 192.168.0.0/16
