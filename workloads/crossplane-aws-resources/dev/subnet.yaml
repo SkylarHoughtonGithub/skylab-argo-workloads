@@ -9,7 +9,7 @@ spec:
     availabilityZone: us-east-2a
     cidrBlock: 192.168.10.0/24
     vpcIdRef:
-      name: skylab-vpc
+      name: skylab-crossplane-vpc
     tags:
       - key: Name
         value: skylab-crossplane-us-east-2a
@@ -27,7 +27,7 @@ spec:
     availabilityZone: us-east-2c
     cidrBlock: 192.168.11.0/24
     vpcIdRef:
-      name: skylab-vpc
+      name: skylab-crossplane-vpc
     tags:
       - key: Name
         value: skylab-crossplane-us-east-2c
