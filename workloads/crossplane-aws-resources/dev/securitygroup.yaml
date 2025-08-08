@@ -7,7 +7,8 @@ spec:
   forProvider:
     groupName: skylab-default
     region: us-east-2
-    vpcId: vpc-0b03763a7a78b563b
+    vpcIdRef:
+      name: skylab-vpc
     description: "EKS cluster security group"
     ingress:
       - fromPort: -1
