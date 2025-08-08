@@ -11,8 +11,8 @@ spec:
     nodeRoleRef:
       name: eks-node-role
     subnetRefs:
-      - name: skylab-public-us-east-2a
-      - name: skylab-public-us-east-2c
+      - name: skylab-crossplane-us-east-2a
+      - name: skylab-crossplane-us-east-2a
     scalingConfig:
       desiredSize: 1
       maxSize: 1
@@ -22,7 +22,7 @@ spec:
     updateConfig:
       force: true
     tags:
-      Name: crossplane-eks
+      Name: crossplane-nodegroup-general
       Environment: dev
       ManagedBy: crossplane
   providerConfigRef:

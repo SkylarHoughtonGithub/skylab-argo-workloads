@@ -13,10 +13,10 @@ spec:
       endpointPrivateAccess: true
       endpointPublicAccess: false
       securityGroupIdRefs:
-        - name: skylab-default
+        - name: skylab-crossplane-sg
       subnetIdRefs:
-        - name: skylab-public-us-east-2a
-        - name: skylab-public-us-east-2c
+        - name: skylab-crossplane-us-east-2a
+        - name: skylab-crossplane-us-east-2a
     tags:
       Name: crossplane-eks
       Environment: dev
