@@ -36,6 +36,7 @@ backstage:
             signIn:
               resolvers:
                 - resolver: usernameMatchingUserEntityName
+    signInPage: github
 
     integrations:
       github:
