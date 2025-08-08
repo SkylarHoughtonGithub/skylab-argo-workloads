@@ -4,7 +4,6 @@ kind: VPC
 metadata:
   name: skylab-crossplane-vpc
 spec:
-  deletionPolicy: Orphan
   forProvider:
     region: us-east-2
     cidrBlock: 192.168.0.0/16
