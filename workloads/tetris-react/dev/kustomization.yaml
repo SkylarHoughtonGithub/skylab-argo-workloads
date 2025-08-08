@@ -4,5 +4,6 @@ kind: Kustomization
 namespace: tetris-react
 resources:
   - namespace.yaml
+  - ingress.yaml
   - deployment.yaml
   - service.yaml
