@@ -8,7 +8,7 @@ spec:
     groupName: skylab-default
     region: us-east-2
     vpcIdRef:
-      name: skylab-vpc
+      name: skylab-crossplane-vpc
     description: "EKS cluster security group"
     ingress:
       - fromPort: -1

@@ -2,9 +2,7 @@
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: VPC
 metadata:
-  name: skylab-vpc
-  annotations:
-    crossplane.io/external-name: vpc-0b03763a7a78b563b
+  name: skylab-crossplane-vpc
 spec:
   deletionPolicy: Orphan
   forProvider:
