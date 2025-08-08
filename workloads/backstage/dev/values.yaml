@@ -1,0 +1,67 @@
+---
+backstage:
+  image:
+    registry: ghcr.io
+    repository: backstage/backstage
+    tag: latest
+
+  appConfig:
+    app:
+      title: shoutsky lab
+      baseUrl: http://backstage.skylarhoughtongithub.local
+    
+    organization:
+      name: shoutsky
+    
+    backend:
+      baseUrl: http://backstage.skylarhoughtongithub.local
+      listen:
+        port: 7007
+        host: 0.0.0.0
+      cors:
+        origin: http://backstage.skylarhoughtongithub.local
+        methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+        credentials: true
+      database:
+        client: better-sqlite3
+        connection: ':memory:'
+    
+    integrations:
+      github:
+        - host: github.com
+          # Add your GitHub token as a secret reference
+          # token: ${GITHUB_TOKEN}
+    
+    catalog:
+      import:
+        entityFilename: catalog-info.yaml
+        pullRequestBranchName: backstage-integration
+      rules:
+        - allow: [Component, System, API, Resource, Location]
+      locations:
+        - type: url
+          target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+
+  service:
+    type: ClusterIP
+    ports:
+      backend: 7007
+      name: http-backend
+    sessionAffinity: None
+
+  ingress:
+    enabled: false
+
+  extraEnvVars:
+    - name: NODE_ENV
+      value: development
+
+  extraVolumeMounts: []
+  extraVolumes: []
+
+postgresql:
+  enabled: false
+  # Enable if you want to use PostgreSQL instead of SQLite
+  # auth:
+  #   postgresPassword: "your-password"
+  #   database: backstage
