@@ -16,7 +16,7 @@ spec:
         - name: skylab-crossplane-sg
       subnetIdRefs:
         - name: skylab-crossplane-us-east-2a
-        - name: skylab-crossplane-us-east-2a
+        - name: skylab-crossplane-us-east-2c
     tags:
       Name: crossplane-eks
       Environment: dev

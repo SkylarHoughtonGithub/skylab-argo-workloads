@@ -12,7 +12,7 @@ spec:
       name: eks-node-role
     subnetRefs:
       - name: skylab-crossplane-us-east-2a
-      - name: skylab-crossplane-us-east-2a
+      - name: skylab-crossplane-us-east-2c
     scalingConfig:
       desiredSize: 1
       maxSize: 1
