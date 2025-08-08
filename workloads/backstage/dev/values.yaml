@@ -25,7 +25,13 @@ backstage:
       database:
         client: better-sqlite3
         connection: ':memory:'
-    
+
+    auth:
+      environment: development
+      providers:
+        guest:
+          dangerouslyAllowOutsideDevelopment: true
+
     integrations:
       github:
         - host: github.com
