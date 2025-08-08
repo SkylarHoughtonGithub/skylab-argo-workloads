@@ -8,6 +8,8 @@ metadata:
 spec:
   forProvider:
     region: us-east-2
+    availabilityZone: us-east-2a
+    cidrBlock: 192.168.10.0/24
     vpcIdRef:
       name: skylab-vpc
     tags:
@@ -27,6 +29,8 @@ metadata:
 spec:
   forProvider:
     region: us-east-2
+    availabilityZone: us-east-2c
+    cidrBlock: 192.168.11.0/24
     vpcIdRef:
       name: skylab-vpc
     tags:
