@@ -2,7 +2,7 @@
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: RouteTable
 metadata:
-  name: skylab-public-rt
+  name: skylab-crossplane-public-rt
 spec:
   forProvider:
     region: us-east-2
@@ -16,10 +16,10 @@ spec:
     routes:
       - destinationCidrBlock: 0.0.0.0/0
         gatewayIdRef:
-          name: skylab-igw
+          name: skylab-crossplane-igw
     tags:
       - key: Name
-        value: skylab-public-rt
+        value: skylab-crossplane-public-rt
       - key: Environment
         value: dev
       - key: ManagedBy
