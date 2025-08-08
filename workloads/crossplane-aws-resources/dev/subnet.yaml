@@ -15,7 +15,6 @@ spec:
     tags:
       - key: Name
         value: skylab-public-us-east-2a
-  managementPolicies: ["Observe", "Update", "Delete"]
   providerConfigRef:
     name: default
 
@@ -36,6 +35,5 @@ spec:
     tags:
       - key: Name
         value: skylab-public-us-east-2c
-  managementPolicies: ["Observe", "Update", "Delete"]
   providerConfigRef:
     name: default

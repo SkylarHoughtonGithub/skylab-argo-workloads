@@ -15,6 +15,5 @@ spec:
     tags:
       - key: Name
         value: skylab-vpc
-  managementPolicies: ["Observe", "Update", "Delete"]
   providerConfigRef:
     name: default
