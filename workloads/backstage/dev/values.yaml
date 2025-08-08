@@ -31,6 +31,13 @@ backstage:
         - host: github.com
           # Add your GitHub token as a secret reference
           # token: ${GITHUB_TOKEN}
+
+    techdocs:
+      builder: 'local'
+      generator:
+        runIn: 'docker'
+      publisher:
+        type: 'local'
     
     catalog:
       import:
