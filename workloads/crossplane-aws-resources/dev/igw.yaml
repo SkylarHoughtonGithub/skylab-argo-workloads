@@ -7,10 +7,10 @@ spec:
   forProvider:
     region: us-east-2
     vpcIdRef:
-      name: skylab-vpc
+      name: skylab-crossplane-vpc
     tags:
       - key: Name
-        value: skylab-igw
+        value: skylabcrossplane-igw
       - key: Environment
         value: dev
       - key: ManagedBy

@@ -10,9 +10,9 @@ spec:
       name: skylab-crossplane-vpc
     associations:
       - subnetIdRef:
-          name: skylab-public-us-east-2a
+          name: skylab-crossplane-us-east-2a
       - subnetIdRef:
-          name: skylab-public-us-east-2c
+          name: skylab-crossplane-us-east-2c
     routes:
       - destinationCidrBlock: 0.0.0.0/0
         gatewayIdRef:
