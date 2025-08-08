@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: tetris-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: tetris
   ports:
