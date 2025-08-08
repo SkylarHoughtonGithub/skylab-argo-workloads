@@ -8,6 +8,15 @@ spec:
     region: us-east-2
     vpcIdRef:
       name: skylab-crossplane-vpc
+    associations:
+      - subnetIdRef:
+          name: skylab-public-us-east-2a
+      - subnetIdRef:
+          name: skylab-public-us-east-2c
+    routes:
+      - destinationCidrBlock: 0.0.0.0/0
+        gatewayIdRef:
+          name: skylab-igw
     tags:
       - key: Name
         value: skylab-public-rt
@@ -15,51 +24,5 @@ spec:
         value: dev
       - key: ManagedBy
         value: crossplane
-  providerConfigRef:
-    name: default
-
----
-apiVersion: ec2.aws.crossplane.io/v1beta1
-kind: Route
-metadata:
-  name: skylab-public-route
-spec:
-  forProvider:
-    region: us-east-2
-    routeTableIdRef:
-      name: skylab-public-rt
-    destinationCidrBlock: 0.0.0.0/0
-    gatewayIdRef:
-      name: skylab-igw
-  providerConfigRef:
-    name: default
-
----
-apiVersion: ec2.aws.crossplane.io/v1beta1
-kind: RouteTableAssociation
-metadata:
-  name: skylab-public-rta-2a
-spec:
-  forProvider:
-    region: us-east-2
-    routeTableIdRef:
-      name: skylab-public-rt
-    subnetIdRef:
-      name: skylab-public-us-east-2a
-  providerConfigRef:
-    name: default
-
----
-apiVersion: ec2.aws.crossplane.io/v1beta1
-kind: RouteTableAssociation
-metadata:
-  name: skylab-public-rta-2c
-spec:
-  forProvider:
-    region: us-east-2
-    routeTableIdRef:
-      name: skylab-public-rt
-    subnetIdRef:
-      name: skylab-public-us-east-2c
   providerConfigRef:
     name: default
