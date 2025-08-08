@@ -6,8 +6,10 @@ resources:
   - namespace.yaml
   - iam-role-cluster.yaml
   - iam-role-node.yaml
+  - igw.yaml
   - eks-cluster.yaml
   - eks-nodegroup.yaml
+  - routetable.yaml
   - securitygroup.yaml
   - subnet.yaml
   - vpc.yaml
