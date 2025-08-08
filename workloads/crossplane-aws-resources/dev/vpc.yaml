@@ -13,6 +13,6 @@ spec:
     instanceTenancy: default
     tags:
       - key: Name
-        value: skylab-vpc
+        value: skylab-crossplane-vpc
   providerConfigRef:
     name: default
