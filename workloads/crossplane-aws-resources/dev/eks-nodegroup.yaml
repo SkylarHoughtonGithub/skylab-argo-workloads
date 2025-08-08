@@ -19,8 +19,6 @@ spec:
       minSize: 1
     instanceTypes:
       - t3.medium
-    updateConfig:
-      force: true
     tags:
       Name: crossplane-nodegroup-general
       Environment: dev
