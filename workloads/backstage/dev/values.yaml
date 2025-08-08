@@ -42,16 +42,6 @@ backstage:
         - type: url
           target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
 
-  service:
-    type: ClusterIP
-    ports:
-      backend: 7007
-      name: http-backend
-    sessionAffinity: None
-
-  ingress:
-    enabled: false
-
   extraEnvVars:
     - name: NODE_ENV
       value: development
