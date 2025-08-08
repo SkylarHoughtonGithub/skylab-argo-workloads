@@ -1,0 +1,19 @@
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: InternetGateway
+metadata:
+  name: skylab-crossplane-igw
+spec:
+  forProvider:
+    region: us-east-2
+    vpcIdRef:
+      name: skylab-vpc
+    tags:
+      - key: Name
+        value: skylab-igw
+      - key: Environment
+        value: dev
+      - key: ManagedBy
+        value: crossplane
+  providerConfigRef:
+    name: default
