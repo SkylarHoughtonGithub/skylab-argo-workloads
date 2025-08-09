@@ -32,10 +32,12 @@ backstage:
         connection: ':memory:'
 
     auth:
-      environment: development
       providers:
-        guest:
-          dangerouslyAllowOutsideDevelopment: true
+        guest: {}
+        github:
+          development:
+            clientId: ${GITHUB_CLIENT_ID}
+            clientSecret: ${GITHUB_CLIENT_SECRET}
 
     integrations:
       github:
