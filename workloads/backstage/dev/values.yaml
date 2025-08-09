@@ -1,9 +1,14 @@
 ---
+global:
+  imagePullSecrets:
+    - name: ecr-registry-secret
+
 backstage:
   image:
-    registry: ghcr.io
-    repository: backstage/backstage
+    registry: 635314249418.dkr.ecr.us-east-2.amazonaws.com
+    repository: shoutsky-backstage
     tag: latest
+    
 
   appConfig:
     app:
