@@ -1,7 +1,7 @@
 ---
 global:
   imagePullSecrets:
-    - name: ecr-registry-secret
+    - ecr-registry-secret
 
 backstage:
   image:
