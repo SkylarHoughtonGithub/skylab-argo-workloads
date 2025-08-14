@@ -88,11 +88,6 @@ backstage:
         secretKeyRef:
           name: backstage-github-oauth
           key: token
-    - name: POSTGRES_PASSWORD
-      valueFrom:
-        secretKeyRef:
-          name: backstage-postgresql-creds
-          key: admin-password
 
   extraVolumeMounts: []
   extraVolumes: []
