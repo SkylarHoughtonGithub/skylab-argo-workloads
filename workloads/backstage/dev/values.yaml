@@ -98,7 +98,7 @@ backstage:
   extraVolumes: []
 
 postgresql:
-  enabled: false
+  enabled: true
   auth:
     username: backstage
     existingSecret: "backstage-postgresql-creds"
