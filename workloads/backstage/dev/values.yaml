@@ -99,3 +99,4 @@ postgresql:
     existingSecret: backstage-postgresql-creds
     secretKeys:
       adminPasswordKey: admin-password
+      userPasswordKey: user-password
