@@ -28,8 +28,13 @@ backstage:
         methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
         credentials: true
       database:
-        client: better-sqlite3
-        connection: ':memory:'
+        client: pg
+        connection:
+          host: backstage-postgresql
+          port: 5432
+          user: backstage
+          password: ${POSTGRES_PASSWORD}
+          database: backstage
 
     auth:
       providers:
@@ -83,13 +88,20 @@ backstage:
         secretKeyRef:
           name: backstage-github-oauth
           key: token
+    - name: POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: backstage-postgresql-creds
+          key: user-password
 
   extraVolumeMounts: []
   extraVolumes: []
 
 postgresql:
   enabled: false
-  # Enable if you want to use PostgreSQL instead of SQLite
-  # auth:
-  #   postgresPassword: "your-password"
-  #   database: backstage
+  auth:
+    username: backstage
+    existingSecret: "backstage-postgresql-creds"
+    secretKeys:
+      adminPasswordKey: admin-password
+      userPasswordKey: user-password

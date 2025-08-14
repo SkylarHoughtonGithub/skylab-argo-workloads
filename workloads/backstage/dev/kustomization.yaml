@@ -6,6 +6,7 @@ resources:
 - namespace.yaml
 - ingress.yaml
 - es_github_oauth.yaml
+- es_postgres_creds.yaml
 
 helmCharts:
 - name: backstage
