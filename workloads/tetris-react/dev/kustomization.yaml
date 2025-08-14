@@ -7,3 +7,5 @@ resources:
   - ingress.yaml
   - deployment.yaml
   - service.yaml
+commonLabels:
+  backstage.io/kubernetes-id: tetris
