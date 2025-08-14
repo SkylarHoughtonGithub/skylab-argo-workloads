@@ -71,7 +71,24 @@ backstage:
           region: us-east-2
 
     argocd:
-      appLocatorMethods: []
+      baseUrl: https://argocd.skylarhoughtongithub.local
+      username: ${ARGOCD_USERNAME}
+      password: ${ARGOCD_PASSWORD}
+      appLocatorMethods:
+        - type: 'config'
+          instances:
+            - name: local
+              url: https://argocd.skylarhoughtongithub.local
+              token: ${ARGOCD_AUTH_TOKEN}
+
+    proxy:
+      endpoints:
+        '/argocd/api':
+          target: https://argocd.skylarhoughtongithub.local/api/v1/
+          changeOrigin: true
+          secure: false
+          headers:
+            Cookie: ${ARGOCD_AUTH_TOKEN}
 
     catalog:
       import:
@@ -127,6 +144,16 @@ backstage:
         secretKeyRef:
           name: backstage-argocd-token
           key: token
+    - name: ARGOCD_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: backstage-argocd-credentials
+          key: username
+    - name: ARGOCD_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: backstage-argocd-credentials
+          key: password
 
   extraVolumeMounts: []
   extraVolumes: []
