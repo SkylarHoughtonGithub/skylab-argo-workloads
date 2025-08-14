@@ -61,6 +61,7 @@ backstage:
             - url: https://kubernetes.default.svc
               name: local-cluster
               authProvider: 'serviceAccount'
+              serviceAccountToken: ${K8S_SERVICE_ACCOUNT_TOKEN}
 
     techdocs:
       builder: local
@@ -116,6 +117,11 @@ backstage:
           key: aws_secret_access_key
     - name: AWS_REGION
       value: "us-east-2"
+    - name: K8S_SERVICE_ACCOUNT_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: backstage-k8s-token
+          key: token
 
   extraVolumeMounts: []
   extraVolumes: []
