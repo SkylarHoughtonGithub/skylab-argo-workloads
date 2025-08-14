@@ -71,7 +71,6 @@ backstage:
           region: us-east-2
 
     argocd:
-      baseUrl: https://argocd.skylarhoughtongithub.local
       username: ${ARGOCD_USERNAME}
       password: ${ARGOCD_PASSWORD}
       appLocatorMethods:
@@ -80,7 +79,6 @@ backstage:
             - name: local
               url: https://argocd.skylarhoughtongithub.local
               token: ${ARGOCD_AUTH_TOKEN}
-              insecure: true
 
     proxy:
       endpoints:
