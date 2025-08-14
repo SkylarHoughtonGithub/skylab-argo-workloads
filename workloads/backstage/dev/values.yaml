@@ -80,6 +80,8 @@ backstage:
             - name: local
               url: https://argocd.skylarhoughtongithub.local
               token: ${ARGOCD_AUTH_TOKEN}
+              insecure: true
+        - type: 'annotation'
 
     proxy:
       endpoints:
