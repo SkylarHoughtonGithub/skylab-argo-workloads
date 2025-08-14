@@ -58,9 +58,6 @@ backstage:
         awsS3:
           bucketName: skylab-backstage-techdocs
           region: us-east-2
-          credentials:
-            accessKeyId: ${TECHDOCS_AWSS3_ACCESS_KEY_ID_CREDENTIAL}
-            secretAccessKey: ${TECHDOCS_AWSS3_SECRET_ACCESS_KEY_CREDENTIAL}
     
     catalog:
       import:
@@ -94,16 +91,18 @@ backstage:
         secretKeyRef:
           name: backstage-github-oauth
           key: token
-    - name: TECHDOCS_AWSS3_ACCESS_KEY_ID_CREDENTIAL
+    - name: AWS_ACCESS_KEY_ID
       valueFrom:
         secretKeyRef:
           name: backstage-aws-creds
           key: aws_access_key_id
-    - name: TECHDOCS_AWSS3_SECRET_ACCESS_KEY_CREDENTIAL
+    - name: AWS_SECRET_ACCESS_KEY
       valueFrom:
         secretKeyRef:
           name: backstage-aws-creds
           key: aws_secret_access_key
+    - name: AWS_REGION
+      value: "us-east-2"
 
   extraVolumeMounts: []
   extraVolumes: []
