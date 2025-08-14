@@ -101,6 +101,6 @@ postgresql:
   enabled: true
   auth:
     username: backstage
-    existingSecret: "backstage-postgresql-creds"
+    existingSecret: backstage-postgresql-creds
     secretKeys:
       adminPasswordKey: admin-password
