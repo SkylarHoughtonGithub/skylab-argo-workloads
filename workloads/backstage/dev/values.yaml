@@ -77,13 +77,13 @@ backstage:
         - type: 'config'
           instances:
             - name: local
-              url: https://argocd.skylarhoughtongithub.local
+              url: http://argocd.skylarhoughtongithub.local
               token: ${ARGOCD_AUTH_TOKEN}
 
     proxy:
       endpoints:
         '/argocd/api':
-          target: https://argocd.skylarhoughtongithub.local/api/v1/
+          target: http://argocd.skylarhoughtongithub.local/api/v1/
           changeOrigin: true
           secure: false
           headers:
