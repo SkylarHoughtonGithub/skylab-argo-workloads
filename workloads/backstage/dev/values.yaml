@@ -56,7 +56,6 @@ backstage:
       publisher:
         type: awsS3
         awsS3:
-          accountId: 635314249418
           bucketName: skylab-backstage-techdocs
           region: us-east-2
 
