@@ -3,13 +3,16 @@ global:
   imagePullSecrets:
     - ecr-registry-secret
 
+serviceAccount:
+  create: true
+  name: backstage-k8s
+
 backstage:
   image:
     registry: 635314249418.dkr.ecr.us-east-2.amazonaws.com
     repository: shoutsky-backstage
     tag: latest
     
-
   appConfig:
     app:
       title: shoutsky lab
@@ -48,6 +51,14 @@ backstage:
       github:
         - host: github.com
           token: ${GITHUB_TOKEN}
+
+    kubernetes:
+      clusterLocatorMethods:
+        - type: 'config'
+          clusters:
+            - url: https://kubernetes.default.svc
+              name: local-cluster
+              authProvider: 'serviceAccount'
 
     techdocs:
       builder: local
