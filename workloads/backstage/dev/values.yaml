@@ -92,7 +92,7 @@ backstage:
       valueFrom:
         secretKeyRef:
           name: backstage-postgresql-creds
-          key: user-password
+          key: admin-password
 
   extraVolumeMounts: []
   extraVolumes: []
@@ -104,4 +104,3 @@ postgresql:
     existingSecret: "backstage-postgresql-creds"
     secretKeys:
       adminPasswordKey: admin-password
-      userPasswordKey: user-password
