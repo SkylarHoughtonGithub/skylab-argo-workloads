@@ -65,6 +65,13 @@ backstage:
           - name: default
             url: https://argocd.skylarhoughtongithub.local/
             token: ${ARGOCD_TOKEN}
+        appLocatorMethods:
+          - type: config
+            instances:
+              - name: default
+                url: https://argocd.skylarhoughtongithub.local/
+                token: ${ARGOCD_TOKEN}
+          - type: annotation
 
     techdocs:
       builder: local
