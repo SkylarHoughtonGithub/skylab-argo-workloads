@@ -53,6 +53,8 @@ backstage:
           token: ${GITHUB_TOKEN}
 
     kubernetes:
+      serviceLocatorMethod:
+        type: 'multiTenant'
       clusterLocatorMethods:
         - type: 'config'
           clusters:
