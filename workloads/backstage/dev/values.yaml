@@ -56,9 +56,15 @@ backstage:
       publisher:
         type: awsS3
         awsS3:
+          accountId: 635314249418
           bucketName: skylab-backstage-techdocs
           region: us-east-2
-    
+  aws:
+    accounts:
+      - accountId: 635314249418
+        accessKeyId: ${AWS_ACCESS_KEY_ID}
+        secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+
     catalog:
       import:
         entityFilename: catalog-info.yaml
