@@ -60,6 +60,12 @@ backstage:
               serviceAccountToken: ${K8S_SERVICE_ACCOUNT_TOKEN}
               caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
 
+      argocd:
+        servers:
+          - name: default
+            url: https://argocd.skylarhoughtongithub.local/
+            token: ${ARGOCD_TOKEN}
+
     techdocs:
       builder: local
       generator:
@@ -118,6 +124,11 @@ backstage:
       valueFrom:
         secretKeyRef:
           name: backstage-k8s-token
+          key: token
+    - name: ARGOCD_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: backstage-argocd-token
           key: token
 
   extraVolumeMounts: []
