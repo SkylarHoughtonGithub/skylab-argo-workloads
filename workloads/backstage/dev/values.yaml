@@ -61,17 +61,12 @@ backstage:
               caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
 
       argocd:
-        servers:
-          - name: default
-            url: https://argocd.skylarhoughtongithub.local/
-            token: ${ARGOCD_TOKEN}
         appLocatorMethods:
           - type: config
             instances:
               - name: default
-                url: https://argocd.skylarhoughtongithub.local/
+                url: https://argocd.skylarhoughtongithub.local
                 token: ${ARGOCD_TOKEN}
-          - type: annotation
 
     techdocs:
       builder: local
