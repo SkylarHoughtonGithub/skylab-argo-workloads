@@ -62,6 +62,7 @@ backstage:
               name: local-cluster
               authProvider: 'serviceAccount'
               caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+              skipTLSVerify: false
 
     techdocs:
       builder: local
