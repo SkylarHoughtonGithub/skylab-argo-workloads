@@ -141,7 +141,7 @@ backstage:
     - name: ARGOCD_TOKEN
       valueFrom:
         secretKeyRef:
-          name: backstage-argocd-token
+          name: backstage-argocd-credentials
           key: token
     - name: ARGOCD_USERNAME
       valueFrom:
