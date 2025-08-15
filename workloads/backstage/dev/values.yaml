@@ -76,7 +76,7 @@ backstage:
       appLocatorMethods:
         - type: 'config'
           instances:
-            - name: local
+            - name: argo
               url: http://argocd.skylarhoughtongithub.local
               token: ${ARGOCD_AUTH_TOKEN}
 
