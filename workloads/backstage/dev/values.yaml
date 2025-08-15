@@ -141,17 +141,17 @@ backstage:
     - name: ARGOCD_TOKEN
       valueFrom:
         secretKeyRef:
-          name: backstage-argocd-credentials
+          name: backstage-argocd-creds
           key: token
     - name: ARGOCD_USERNAME
       valueFrom:
         secretKeyRef:
-          name: backstage-argocd-credentials
+          name: backstage-argocd-creds
           key: username
     - name: ARGOCD_PASSWORD
       valueFrom:
         secretKeyRef:
-          name: backstage-argocd-credentials
+          name: backstage-argocd-creds
           key: password
 
   extraVolumeMounts: []
