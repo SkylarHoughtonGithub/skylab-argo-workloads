@@ -12,18 +12,18 @@ backstage:
   appConfig:
     app:
       title: shoutsky lab
-      baseUrl: http://backstage.skylarhoughtongithub.local
+      baseUrl: http://backstage-dev.skylarhoughtongithub.local
     
     organization:
       name: shoutsky
     
     backend:
-      baseUrl: http://backstage.skylarhoughtongithub.local
+      baseUrl: http://backstage-dev.skylarhoughtongithub.local
       listen:
         port: 7007
         host: 0.0.0.0
       cors:
-        origin: http://backstage.skylarhoughtongithub.local
+        origin: http://backstage-dev.skylarhoughtongithub.local
         methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
         credentials: true
       database:
