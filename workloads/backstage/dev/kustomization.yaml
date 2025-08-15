@@ -7,6 +7,7 @@ resources:
 - ingress.yaml
 - es_github_oauth.yaml
 - es_backstage_aws_creds.yaml
+- es_backstage_argocd_creds.yaml
 - es_postgres_creds.yaml
 - sa_backstage.yaml
 
