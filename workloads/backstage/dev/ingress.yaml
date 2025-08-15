@@ -12,10 +12,10 @@ spec:
   ingressClassName: traefik
   tls:
   - hosts:
-    - backstage.skylarhoughtongithub.local
+    - backstage-dev.skylarhoughtongithub.local
     secretName: backstage-tls
   rules:
-  - host: backstage.skylarhoughtongithub.local
+  - host: backstage-dev.skylarhoughtongithub.local
     http:
       paths:
       - backend:
