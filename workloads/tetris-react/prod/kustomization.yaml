@@ -9,4 +9,4 @@ resources:
   - service.yaml
 commonLabels:
   backstage.io/kubernetes-id: tetris
-  environment: dev
+  environment: prod
