@@ -78,7 +78,7 @@ backstage:
           instances:
             - name: argo
               url: http://argocd.skylarhoughtongithub.local
-              token: ${ARGOCD_AUTH_TOKEN}
+              token: ${ARGOCD_TOKEN}
 
     proxy:
       endpoints:
@@ -87,7 +87,7 @@ backstage:
           changeOrigin: true
           secure: false
           headers:
-            Cookie: ${ARGOCD_AUTH_TOKEN}
+            Cookie: ${ARGOCD_TOKEN}
 
     catalog:
       import:
