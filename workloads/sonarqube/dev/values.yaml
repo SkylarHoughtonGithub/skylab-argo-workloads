@@ -37,6 +37,6 @@ postgresql:
       size: 20Gi
       storageClass: "standard"
 
-sonarProperties: |
-  sonar.core.serverBaseURL=https://sonarqube.skylarhoughtongithub.local
+sonarProperties:
+  sonar.core.serverBaseURL: https://sonarqube.skylarhoughtongithub.local
 
