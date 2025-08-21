@@ -13,6 +13,7 @@ service:
 ingress:
   enabled: false
 
+monitoringPasscode: "monitoring-secret-code" 
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
