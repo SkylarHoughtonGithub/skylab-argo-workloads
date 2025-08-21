@@ -16,12 +16,13 @@ service:
 ingress:
   enabled: false
 
-monitoringPasscode: "monitoring-secret-code" 
+monitoringPasscode: "monitoring-secret-code"
+
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
   size: 20Gi
-  storageClass: "standard"
+  storageClass: local-path
 
 postgresql:
   enabled: true
@@ -35,7 +36,7 @@ postgresql:
     persistence:
       enabled: true
       size: 20Gi
-      storageClass: "standard"
+      storageClass: local-path
 
 sonarProperties:
   sonar.core.serverBaseURL: https://sonarqube.skylarhoughtongithub.local
