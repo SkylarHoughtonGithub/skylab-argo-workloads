@@ -1,5 +1,8 @@
 
 ---
+community:
+  enabled: true
+
 image:
   repository: sonarqube
   tag: 10.3-community
