@@ -1,0 +1,38 @@
+
+---
+image:
+  repository: sonarqube
+  tag: 10.3-community
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  externalPort: 9000
+  internalPort: 9000
+
+ingress:
+  enabled: false
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 20Gi
+  storageClass: "standard"
+
+postgresql:
+  enabled: true
+  auth:
+    username: sonarqube
+    database: sonarqube
+    existingSecret: sonarqube-secrets
+    secretKeys:
+      adminPasswordKey: postgresql-password
+  primary:
+    persistence:
+      enabled: true
+      size: 20Gi
+      storageClass: "standard"
+
+sonarProperties: |
+  sonar.core.serverBaseURL=https://sonarqube.skylarhoughtongithub.local
+
