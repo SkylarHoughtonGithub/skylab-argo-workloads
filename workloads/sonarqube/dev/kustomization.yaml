@@ -1,4 +1,4 @@
-# kustomization.yaml
+---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: sonarqube
@@ -24,3 +24,4 @@ secretGenerator:
   literals:
   - postgresql-password=your-secure-password
   - sonarqube-admin-password=admin-secure-password
+  - monitoring-passcode=monitoring-secret-code
